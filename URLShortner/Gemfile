@@ -50,3 +50,5 @@ end
 
 # pry > irb
 gem 'pry-rails'
+
+gem 'launchy'

@@ -1,0 +1,40 @@
+while true
+  puts "Input your email:"
+  email = gets.chomp
+  user = User.new(email: email)
+
+  unless user.valid?
+    user = User.find_by(email: email)
+    break
+  end
+
+  puts "The email doesn't exist!"
+end
+
+
+while true
+  puts "What do you want to do?"
+  choice = Integer(gets.chomp)
+
+  if choice == 0 || choice == 1
+    break
+  end
+
+  puts "Invalid choice. Choose again."
+end
+
+if choice == 0
+  puts "Type in your long url"
+  long_url = gets.chomp
+  new_short_url = ShortenedUrl.create_for_user_and_long_url!(user, long_url)
+  puts "Short url is: #{new_short_url.short_url}."
+  puts "Goodbye!"
+else
+  puts "Type in the shortened url"
+  shortened_url = gets.chomp
+
+  long_url = ShortenedUrl.find_by(submitter_id: user.id, short_url: shortened_url).long_url
+
+  puts "Long url: #{long_url}"
+  Launchy.open(long_url)
+end
