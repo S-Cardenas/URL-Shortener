@@ -82,3 +82,47 @@ DEPRECATION WARNING: `#timestamps` was called without specifying an option for `
   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "shortened_urls" ("submitter_id", "long_url", "short_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["submitter_id", 1], ["long_url", "dsihfbslhdfbhsdbflsdbfiylsvegroyg387rglfb"], ["short_url", "hZoSNztGSMGK8latxgFpJA"], ["created_at", "2016-02-24 20:21:28.699874"], ["updated_at", "2016-02-24 20:21:28.699874"]]
   [1m[35m (1.1ms)[0m  commit transaction
   [1m[36mShortenedURL Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = ? LIMIT 1[0m  [["short_url", "QO0Rha6j9fGKYINqweHe_w"]]
+  [1m[36mShortenedURL Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = ? LIMIT 1[0m  [["short_url", "zdLxGAMUcK8bRM_zUBP6nQ"]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mShortenedURL Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = 'zdLxGAMUcK8bRM_zUBP6nQ' LIMIT 1[0m
+  [1m[35mShortenedURL Exists (0.1ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."submitter_id" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mShortenedUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = ? LIMIT 1  [["short_url", "-peBgEtIAJS2yx-DklUhuA"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mShortenedUrl Exists (0.1ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = '-peBgEtIAJS2yx-DklUhuA' LIMIT 1
+  [1m[36mShortenedUrl Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."submitter_id" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'that@that.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["email", "that@that.com"], ["created_at", "2016-02-24 20:33:50.029842"], ["updated_at", "2016-02-24 20:33:50.029842"]]
+  [1m[35m (5.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mShortenedUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = ? LIMIT 1  [["short_url", "w-eBFnIRvTboyWZKxV03WQ"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mShortenedUrl Exists (0.1ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = 'w-eBFnIRvTboyWZKxV03WQ' LIMIT 1
+  [1m[36mShortenedUrl Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."submitter_id" = 2 LIMIT 1[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "shortened_urls" ("submitter_id", "long_url", "short_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["submitter_id", 2], ["long_url", "nkda;nfadl;nfklda;nfkal;fnkdl;a"], ["short_url", "w-eBFnIRvTboyWZKxV03WQ"], ["created_at", "2016-02-24 20:34:26.447870"], ["updated_at", "2016-02-24 20:34:26.447870"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mShortenedUrl Load (0.2ms)[0m  SELECT "shortened_urls".* FROM "shortened_urls"
+  [1m[36mShortenedUrl Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = ? LIMIT 1[0m  [["short_url", "WXji_xkoJ1w5pbhrFBP6hQ"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mShortenedUrl Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = 'WXji_xkoJ1w5pbhrFBP6hQ' LIMIT 1[0m
+  [1m[35mShortenedUrl Exists (0.1ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."submitter_id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mShortenedUrl Exists (0.2ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = ? LIMIT 1  [["short_url", "nQsbP1CCUzH3oj31in6eww"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mShortenedUrl Exists (0.1ms)[0m  SELECT  1 AS one FROM "shortened_urls" WHERE "shortened_urls"."short_url" = 'nQsbP1CCUzH3oj31in6eww' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "shortened_urls" ("submitter_id", "long_url", "short_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["submitter_id", 2], ["long_url", "87340573948759834*YD(SYD&(NDY&(D"], ["short_url", "nQsbP1CCUzH3oj31in6eww"], ["created_at", "2016-02-24 20:35:58.540675"], ["updated_at", "2016-02-24 20:35:58.540675"]]
+  [1m[35m (5.1ms)[0m  commit transaction
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT "shortened_urls".* FROM "shortened_urls"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT "shortened_urls".* FROM "shortened_urls" WHERE "shortened_urls"."submitter_id" = ?[0m  [["submitter_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1
+  [1m[36mShortenedUrl Load (0.1ms)[0m  [1mSELECT "shortened_urls".* FROM "shortened_urls" WHERE "shortened_urls"."submitter_id" = ?[0m  [["submitter_id", 2]]
+  [1m[35mShortenedUrl Load (0.2ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls" WHERE "shortened_urls"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT  "shortened_urls".* FROM "shortened_urls" WHERE "shortened_urls"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT  "shortened_urls".* FROM "shortened_urls" WHERE "shortened_urls"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
