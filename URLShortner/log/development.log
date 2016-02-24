@@ -230,3 +230,31 @@ DEPRECATION WARNING: `#timestamps` was called without specifying an option for `
   [1m[36mVisit Load (0.2ms)[0m  [1mSELECT "visits".* FROM "visits"[0m
   [1m[35mShortenedUrl Load (0.1ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "visits" ON "users"."id" = "visits"."visitor_id" WHERE "visits"."short_url_id" = ?[0m  [["short_url_id", 1]]
+  [1m[35mShortenedUrl Load (0.4ms)[0m  SELECT "shortened_urls".* FROM "shortened_urls"
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1[0m
+  [1m[35mVisit Load (0.4ms)[0m  SELECT "visits".* FROM "visits" WHERE "visits"."short_url_id" = ?  [["short_url_id", 1]]
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(user_id) FROM "visits" WHERE "visits"."short_url_id" = ?  [["short_url_id", 1]]
+  [1m[36mShortenedUrl Load (0.1ms)[0m  [1mSELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT("visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ?  [["short_url_id", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1mSELECT "visits".* FROM "visits"[0m
+  [1m[35mShortenedUrl Load (0.3ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ?[0m  [["short_url_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mShortenedUrl Load (0.2ms)[0m  [1mSELECT  "shortened_urls".* FROM "shortened_urls" WHERE "shortened_urls"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "visits" ("visitor_id", "short_url_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["visitor_id", 1], ["short_url_id", 1], ["created_at", "2016-02-24 21:45:34.254913"], ["updated_at", "2016-02-24 21:45:34.254913"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+  [1m[36mVisit Load (0.2ms)[0m  [1mSELECT "visits".* FROM "visits"[0m
+  [1m[35mShortenedUrl Load (0.2ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT("visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ?[0m  [["short_url_id", 1]]
+  [1m[35mShortenedUrl Load (0.2ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ?[0m  [["short_url_id", 1]]
+  [1m[35mShortenedUrl Load (0.2ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ?[0m  [["short_url_id", 1]]
+  [1m[35mShortenedUrl Load (0.1ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ?[0m  [["short_url_id", 1]]
+  [1m[35mShortenedUrl Load (0.1ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ? AND ("visits"."created_at" BETWEEN '2016-02-24 21:38:53.908503' AND '2016-02-24 21:48:53.908565')[0m  [["short_url_id", 1]]
+  [1m[35mShortenedUrl Load (0.2ms)[0m  SELECT  "shortened_urls".* FROM "shortened_urls"  ORDER BY "shortened_urls"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT "visits"."visitor_id") FROM "visits" WHERE "visits"."short_url_id" = ? AND ("visits"."created_at" BETWEEN '2015-12-17 11:09:19.408389' AND '2016-02-24 21:49:19.408415')[0m  [["short_url_id", 1]]
